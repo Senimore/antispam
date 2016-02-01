@@ -1,0 +1,1 @@
+10 * * * * root /bin/bash /opt/clamav/updateclamav.sh  > /dev/null

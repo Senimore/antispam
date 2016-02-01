@@ -1,0 +1,32 @@
+{
+  "id": "mailscan",
+  "cpus": 0.9,
+  "mem": 900.0,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "senimore/mailscanner",
+      "forcePullImage": true,
+      "network": "BRIDGE",
+      "parameters": [
+	{"key": "link", "value": "logstash" }
+		    ],
+      "portMappings": [
+    {   "containerPort": 10024,
+        "hostPort": 0,
+        "servicePort": 10500,
+        "protocol": "tcp"
+     }
+
+      ]
+    }
+  },
+      "healthChecks": [{
+          "protocol": "TCP",
+          "gracePeriodSeconds": 600,
+          "intervalSeconds": 30,
+          "portIndex": 0,
+          "timeoutSeconds": 10,
+          "maxConsecutiveFailures": 2
+      }]
+    }

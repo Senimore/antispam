@@ -1,0 +1,13 @@
+#!/bin/bash
+
+NAME1=mesmas1
+NAME2=mesmas2
+NAME3=mesmas3
+
+docker-machine  restart ${NAME1}
+docker-machine  restart ${NAME2}
+docker-machine  restart ${NAME3}
+
+
+
+
